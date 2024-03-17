@@ -9,7 +9,7 @@ interface AnchorInterface extends HTMLProps<HTMLAnchorElement> {
 export const Anchor = ({ children, className, ...props }: AnchorInterface) => {
     return (
         <a
-            target={"_blank"}
+            target="_blank"
             className={twMerge(
                 "line line-height flex items-center gap-1 leading-none hover:underline",
                 className,

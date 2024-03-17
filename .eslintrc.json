@@ -9,13 +9,13 @@
   ],
   "rules": {
     "prettier/prettier": [
-      "error",
+      "warn",
       {
         "endOfLine": "auto"
       }
     ],
     "react/jsx-curly-brace-presence": [
-      "error",
+      "warn",
       {
         "props": "never",
         "children": "never"

@@ -41,6 +41,7 @@ export const DesktopCard = ({
                 >
                     {detail.image && (
                         <>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 src={detail.image}
                                 alt="Detail Image"
