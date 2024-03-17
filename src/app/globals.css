@@ -25,7 +25,7 @@
         background-color: black;
         background-repeat: no-repeat;
         background-position: top;
-        background-size: auto;
+        background-size: cover;
         min-height: 100svh;
     }
 
