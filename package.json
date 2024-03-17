@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-hover-card": "^1.0.7",
     "@tabler/icons-react": "^3.1.0",
     "geist": "^1.2.2",
     "next": "14.1.0",
@@ -30,6 +31,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.3.0",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "^5"
   }
 }

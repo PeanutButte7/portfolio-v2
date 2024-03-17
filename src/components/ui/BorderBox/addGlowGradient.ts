@@ -3,9 +3,6 @@ export const addGlowGradient = (
     glowRect: SVGRectElement,
     radialGradient: SVGRadialGradientElement,
 ) => {
-    console.log("radialGradient", radialGradient);
-    console.log("glowRect", glowRect);
-
     const handleGlowGradient = (event: MouseEvent) => {
         if (!glowRect || !radialGradient) {
             return;

@@ -1,15 +1,15 @@
-import Link, { LinkProps } from "next/link";
 import { twMerge } from "tailwind-merge";
-import { ReactNode } from "react";
+import { HTMLProps, ReactNode } from "react";
 
-interface AnchorInterface extends LinkProps {
+interface AnchorInterface extends HTMLProps<HTMLAnchorElement> {
     children: ReactNode;
     className?: string;
 }
 
 export const Anchor = ({ children, className, ...props }: AnchorInterface) => {
     return (
-        <Link
+        <a
+            target={"_blank"}
             className={twMerge(
                 "line line-height flex items-center gap-1 leading-none hover:underline",
                 className,
@@ -17,6 +17,6 @@ export const Anchor = ({ children, className, ...props }: AnchorInterface) => {
             {...props}
         >
             {children}
-        </Link>
+        </a>
     );
 };

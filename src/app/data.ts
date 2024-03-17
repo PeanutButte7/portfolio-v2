@@ -3,7 +3,16 @@ export type Item = {
     description: string;
     date: string;
     highlight?: boolean;
+    detail?: {
+        link: string;
+        linkLabel: string;
+        image?: string;
+    };
 };
+
+const learnMore = "Learn more";
+const github = "View on GitHub";
+const game = "Try the game";
 
 export const careerItems: Item[] = [
     {
@@ -11,23 +20,44 @@ export const careerItems: Item[] = [
         description: "Creating modern websites for a Czech development agency",
         date: "2023 - present",
         highlight: true,
+        detail: {
+            link: "https://appio.cz",
+            linkLabel: learnMore,
+            image: "/images/appio.jpg",
+        },
     },
     {
         title: "Educanet Prague",
         description: "Teaching high school students web development and design",
         date: "2023 - present",
         highlight: true,
+        detail: {
+            link: "https://praha.educanet.cz/cs/informacni-technologie/",
+            linkLabel: learnMore,
+            image: "/images/educanet.jpg",
+        },
     },
     {
         title: "MediaRealms",
         description:
             "Journalist and video editor for the largest Czech gaming media",
         date: "2017 - 2023",
+        detail: {
+            link: "https://mediarealms.cz/",
+            linkLabel: learnMore,
+            image: "/images/mediarealms.jpg",
+        },
     },
     {
         title: "LidskaSila.cz",
-        description: "Helped create web portal for a Czech job agency",
+        description:
+            "Shortly helped creating web portal for a Czech job agency",
         date: "2019",
+        detail: {
+            link: "https://cc.cz/tag/lidskasila-cz/",
+            linkLabel: learnMore,
+            image: "/images/lidskasila.jpg",
+        },
     },
     {
         title: "Freelance",
@@ -43,6 +73,11 @@ export const projectItems: Item[] = [
             "Set of beautiful Tailwind components inspired by Apple Vision Pro",
         date: "2023 - now",
         highlight: true,
+        detail: {
+            link: "https://github.com/PeanutButte7/vision-ui",
+            linkLabel: github,
+            image: "/images/vision-ui.jpg",
+        },
     },
     {
         title: "Mindstrorm",
@@ -54,15 +89,40 @@ export const projectItems: Item[] = [
         title: "Firefox dashboard",
         description: "Custom dashboard built on Vue.js",
         date: "2021",
+        detail: {
+            link: "https://github.com/PeanutButte7/Dashboard",
+            linkLabel: github,
+            image: "/images/firefox-dashboard.jpg",
+        },
     },
     {
         title: "Dynamite Crush",
         description: "Small puzzle game made in Unity",
         date: "2021",
+        detail: {
+            link: "https://peanutbutte7.itch.io/dynamitecrush",
+            linkLabel: game,
+            image: "/images/dynamite-crush.jpg",
+        },
     },
     {
-        title: "GPFC logo design",
+        title: "SYRO",
+        description: "Quick game created for the GMTK 2020 Game Jam",
+        date: "2020",
+        detail: {
+            link: "https://peanutbutte7.itch.io/syro-a-game-where-your-key-bindings-are-out-of-control",
+            linkLabel: game,
+            image: "/images/syro.jpg",
+        },
+    },
+    {
+        title: "Parkour Prague logo design",
         description: "Commissioned logo design for a Prague based parkour club",
         date: "2019",
+        detail: {
+            link: "https://www.parkourpraha.cz/",
+            linkLabel: learnMore,
+            image: "/images/gpfc.jpg",
+        },
     },
 ];

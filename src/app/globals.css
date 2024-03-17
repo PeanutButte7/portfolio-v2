@@ -19,17 +19,19 @@
     }
 
     html {
-        @apply bg-background text-sm font-light text-foreground;
+        @apply bg-background font-light text-foreground;
 
         background: url("/background.png");
+        background-color: black;
         background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        background-position: top;
+        background-size: auto;
         min-height: 100svh;
     }
 
     body {
         min-height: 100svh;
+        @apply text-sm;
     }
 
     h1,

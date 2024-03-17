@@ -5,7 +5,7 @@ import { About } from "@/components/About";
 import { useEffect, useRef } from "react";
 import { blob } from "node:stream/consumers";
 import { addMouseGlow } from "@/utils/addMouseGlow";
-import { ListSection } from "@/components/ListSection";
+import { ListSection } from "@/components/ListSection/ListSection";
 import { careerItems, projectItems } from "@/app/data";
 
 export default function Home() {
@@ -18,10 +18,12 @@ export default function Home() {
     }, []);
 
     return (
-        <main className="pb-24 pt-16">
-            <h1 className="mb-3 text-4xl font-black">Adam Bárta</h1>
+        <main className="w-full pb-24 pt-8">
+            <h1 className="mb-3 px-4 text-4xl font-black md:px-0">
+                Adam Bárta
+            </h1>
             <About />
-            <div className="mt-10 flex flex-col gap-10">
+            <div className="mt-10 flex flex-col gap-10 px-4 md:px-0">
                 <ListSection title="Career" items={careerItems} />
                 <ListSection title="Projects" items={projectItems} />
             </div>

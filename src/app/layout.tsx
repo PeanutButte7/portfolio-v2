@@ -28,7 +28,7 @@ export default function RootLayout({
             lang="en"
             className={`${GeistSans.variable} ${notoSerifDisplay.variable}`}
         >
-            <body className="mx-auto flex max-w-[686px] flex-col items-center">
+            <body className="container mx-auto flex flex-col items-center">
                 {children}
                 <Navigation />
             </body>

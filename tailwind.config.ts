@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const plugin = require("tailwindcss/plugin");
 
 const config: Config = {
     content: [
@@ -29,12 +30,39 @@ const config: Config = {
             sans: ["var(--font-geist-sans)"],
             serif: ["var(--font-noto-serif-display)"],
         },
+        screens: {
+            md: "686px",
+        },
         extend: {
             borderRadius: {
                 "2xl": "0.875rem",
                 "3xl": "1.375rem",
             },
+            keyframes: {
+                wiggle: {
+                    "0%, 100%": { transform: "rotate(-5deg)" },
+                    "50%": { transform: "rotate(5deg)" },
+                },
+            },
+            animation: {
+                wiggle: "wiggle 300ms ease-in-out",
+            },
         },
     },
+    plugins: [
+        require("tailwindcss-animate"),
+        // @ts-ignore
+        plugin(({ addUtilities }) => {
+            addUtilities({
+                ".no-scrollbar": {
+                    "scrollbar-width": "none",
+                    "-ms-overflow-style": "none",
+                    "&::-webkit-scrollbar": {
+                        display: "none",
+                    },
+                },
+            });
+        }),
+    ],
 };
 export default config;
