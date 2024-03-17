@@ -6,6 +6,7 @@ import {
 import { twMerge } from "tailwind-merge";
 import { IconExternalLink } from "@tabler/icons-react";
 import { Item } from "@/app/data";
+import Image from "next/image";
 
 export const DesktopCard = ({
     item,
@@ -42,9 +43,11 @@ export const DesktopCard = ({
                     {detail.image && (
                         <>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
+                            <Image
                                 src={detail.image}
                                 alt="Detail Image"
+                                width={300}
+                                height={150}
                                 className="rounded-2xl"
                             />
                             <hr />
