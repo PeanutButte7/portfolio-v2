@@ -24,11 +24,12 @@
         background: url("/background.png");
         background-color: black;
         background-repeat: no-repeat;
-        background-position: top;
+        background-position: 30% 0;
         background-size: auto;
         min-height: 100svh;
 
         @media (min-width: 686px) {
+            background-position: top;
             background-size: cover;
         }
     }
