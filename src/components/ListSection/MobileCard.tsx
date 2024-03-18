@@ -31,12 +31,12 @@ export const MobileCard = ({
                 {detail && (
                     <Anchor
                         href={detail.link}
-                        className="flex w-fit gap-2 rounded-md bg-background-glass-accent px-2 py-1 text-xs text-foreground-muted group-hover:underline"
+                        className="flex w-fit gap-2 text-nowrap break-keep rounded-md bg-background-glass-accent px-2 py-1 text-xs text-foreground-muted group-hover:underline"
                     >
                         <p className="text-nowrap break-keep">
                             {detail.linkLabel}
                         </p>
-                        <IconExternalLink size={14} />
+                        <IconExternalLink size={14} className="shrink-0" />
                     </Anchor>
                 )}
             </div>
