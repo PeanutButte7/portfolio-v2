@@ -15,7 +15,6 @@ const notoSerifDisplay = Noto_Serif_Display({
 
 export const metadata: Metadata = {
     title: "Adam Barta",
-    description: "Personal portfolio of Adam Barta",
 };
 
 export default function RootLayout({
