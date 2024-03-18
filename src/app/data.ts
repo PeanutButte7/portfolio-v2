@@ -54,7 +54,7 @@ export const careerItems: Item[] = [
             "Shortly helped creating web portal for a Czech job agency",
         date: "2019",
         detail: {
-            link: "https://cc.cz/taga/lidskasila-cz/",
+            link: "https://cc.cz/tag/lidskasila-cz/",
             linkLabel: learnMore,
             image: "/images/lidskasila.jpg",
         },
