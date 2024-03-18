@@ -1,8 +1,3 @@
-import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
-} from "@/components/ui/HoverCard";
 import { twMerge } from "tailwind-merge";
 import { IconExternalLink } from "@tabler/icons-react";
 import { Item } from "@/app/data";
@@ -36,9 +31,11 @@ export const MobileCard = ({
                 {detail && (
                     <Anchor
                         href={detail.link}
-                        className="flex w-fit gap-2 rounded-md bg-background-glass-accent px-2 py-1 text-xs text-foreground-muted group-hover:underline"
+                        className="flex w-fit grow-0 gap-2 rounded-md bg-background-glass-accent px-2 py-1 text-xs text-foreground-muted group-hover:underline"
                     >
-                        <p className="text-nowrap">{detail.linkLabel}</p>
+                        <p className="text-nowrap break-keep">
+                            {detail.linkLabel}
+                        </p>
                         <IconExternalLink size={14} />
                     </Anchor>
                 )}
