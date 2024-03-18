@@ -7,8 +7,8 @@ export const About = () => {
             title: "My favourite tech",
             items: [
                 "React, NextJS, Typescript",
-                "TailwindCSS, Radix",
-                "React-query",
+                "Tailwind, Radix",
+                "React Query",
             ],
         },
         {
@@ -19,8 +19,8 @@ export const About = () => {
             title: "What else?",
             items: [
                 "Copywriting, voiceovers",
-                "Complex video editing",
-                "AI basics",
+                "Video editing",
+                "AI basics, LLM integrations",
             ],
         },
     ];

@@ -54,7 +54,7 @@ export const careerItems: Item[] = [
             "Shortly helped creating web portal for a Czech job agency",
         date: "2019",
         detail: {
-            link: "https://cc.cz/tag/lidskasila-cz/",
+            link: "https://cc.cz/taga/lidskasila-cz/",
             linkLabel: learnMore,
             image: "/images/lidskasila.jpg",
         },
@@ -82,7 +82,7 @@ export const projectItems: Item[] = [
     {
         title: "Mindstrorm",
         description:
-            "Node based brainstorming tool with AI suggestions powered by GPT",
+            "Node based brainstorming tool with AI suggestions powered by GPT 3.5",
         date: "2023",
     },
     {
