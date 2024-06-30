@@ -29,8 +29,8 @@ export const careerItems: Item[] = [
     {
         title: "Educanet Prague",
         description: "Teaching high school students web development and design",
-        date: "2023 - present",
-        highlight: true,
+        date: "2023 - 2024",
+        highlight: false,
         detail: {
             link: "https://praha.educanet.cz/cs/informacni-technologie/",
             linkLabel: learnMore,
@@ -68,11 +68,23 @@ export const careerItems: Item[] = [
 
 export const projectItems: Item[] = [
     {
-        title: "Vision UI",
+        title: "Korektorr",
+        description:
+            "Czech text editor with local and AI autocorrect features",
+        date: "2024 - now",
+        highlight: true,
+        detail: {
+            link: "https://www.korektorr.cz/",
+            linkLabel: learnMore,
+            image: "/images/korektorr.jpg",
+        },
+    },
+    {
+        title: "Vision UI (canceled)",
         description:
             "Set of beautiful Tailwind components inspired by Apple Vision Pro",
-        date: "2023 - now",
-        highlight: true,
+        date: "2023 - 2024",
+        highlight: false,
         detail: {
             link: "https://github.com/PeanutButte7/vision-ui",
             linkLabel: github,
