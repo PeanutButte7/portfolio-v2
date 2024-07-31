@@ -92,7 +92,7 @@ export const projectItems: Item[] = [
         },
     },
     {
-        title: "Mindstrorm",
+        title: "Mindstorm",
         description:
             "Node based brainstorming tool with AI suggestions powered by GPT 3.5",
         date: "2023",
