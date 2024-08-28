@@ -68,6 +68,18 @@ export const careerItems: Item[] = [
 
 export const projectItems: Item[] = [
     {
+        title: "Blog Boost",
+        description:
+            "AI-powered text formatting tool",
+        date: "2024 - now",
+        highlight: true,
+        detail: {
+            link: "https://www.blog-boost.com/",
+            linkLabel: learnMore,
+            image: "/images/blog-boost.jpg",
+        },
+    },
+    {
         title: "Korektorr",
         description:
             "Czech text editor with local and AI autocorrect features",
