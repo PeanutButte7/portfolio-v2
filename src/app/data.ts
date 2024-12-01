@@ -120,7 +120,7 @@ export const projectItems: Item[] = [
         title: "Vision UI (canceled)",
         description:
             "Set of beautiful Tailwind components inspired by Apple Vision Pro",
-        date: "2023 - 2024",
+        date: "2023",
         highlight: false,
         detail: {
             link: "https://github.com/PeanutButte7/vision-ui",
