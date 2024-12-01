@@ -18,13 +18,19 @@ export const careerItems: Item[] = [
     {
         title: "Appio",
         description: "Creating modern websites for a Czech development agency",
-        date: "2023 - present",
+        date: "2023 - now",
         highlight: true,
         detail: {
             link: "https://appio.cz",
             linkLabel: learnMore,
             image: "/images/appio.jpg",
         },
+    },
+    {
+        title: "Freelance",
+        highlight: true,
+        description: "Working on various freelance projects",
+        date: "2019 - now",
     },
     {
         title: "Educanet Prague",
@@ -59,20 +65,39 @@ export const careerItems: Item[] = [
             image: "/images/lidskasila.jpg",
         },
     },
-    {
-        title: "Freelance",
-        description: "Worked on various freelance design projects",
-        date: "2019",
-    },
 ];
 
 export const projectItems: Item[] = [
     {
-        title: "Blog Boost",
+        title: "Launch Kit Studio",
         description:
-            "AI-powered text formatting tool",
+            "Desing agency",
         date: "2024 - now",
         highlight: true,
+        detail: {
+            link: "https://www.launchkitstudio.com",
+            linkLabel: learnMore,
+            image: "/images/launchkitstudio.jpg",
+        },
+    },
+    {
+        title: "Dev Blocks",
+        description:
+            "Notion templates for developers",
+        date: "2024 - now",
+        highlight: true,
+        detail: {
+            link: "https://devblocks.app",
+            linkLabel: learnMore,
+            image: "/images/devblocks.jpg",
+        },
+    },
+    {
+        title: "Blog Boost (canceled)",
+        description:
+            "AI-powered text formatting tool",
+        date: "2024",
+        highlight: false,
         detail: {
             link: "https://www.blog-boost.com/",
             linkLabel: learnMore,
@@ -83,8 +108,8 @@ export const projectItems: Item[] = [
         title: "Korektorr",
         description:
             "Czech text editor with local and AI autocorrect features",
-        date: "2024 - now",
-        highlight: true,
+        date: "2024",
+        highlight: false,
         detail: {
             link: "https://www.korektorr.cz/",
             linkLabel: learnMore,
