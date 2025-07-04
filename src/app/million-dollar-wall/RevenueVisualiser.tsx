@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import { projectColors } from "./page";
 import { cn } from "@/lib/utils";
 import revenueData from "./revenue-data.json";
 
@@ -19,6 +18,20 @@ export interface Dot {
 export interface RevenueVisualizerProps {
     onProjectHover?: (project: string | null) => void;
 }
+
+// Create color mapping for revenue items
+export const projectColors: Record<string, { colors: string[]; link: string }> =
+{
+    "Launch Studio": {
+        colors: ["#f97316", "#fb923c"],
+        link: "https://launchstudio.space",
+    },
+    "Dev Blocks": {
+        colors: ["#6b7280", "#94a3b8"],
+        link: "https://devblocks.app",
+    },
+};
+
 
 export default function RevenueVisualizer({
     onProjectHover,

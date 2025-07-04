@@ -8,7 +8,7 @@ import {
 	ProgressValue,
 } from "@/components/animate-ui/base/progress";
 import { cn } from "@/lib/utils";
-import RevenueVisualizer, { DotInfo } from "./RevenueVisualiser";
+import RevenueVisualizer, { DotInfo, projectColors } from "./RevenueVisualiser";
 import Link from "next/link";
 
 interface ProjectGroup {
@@ -19,20 +19,6 @@ interface ProjectGroup {
 	revenuePercentage: number;
 	amount?: number;
 }
-
-// Create color mapping for revenue items
-export const projectColors: Record<string, { colors: string[]; link: string }> =
-{
-	"Launch Studio": {
-		colors: ["#f97316", "#fb923c"],
-		link: "https://launchstudio.space",
-	},
-	"Dev Blocks": {
-		colors: ["#6b7280", "#94a3b8"],
-		link: "https://devblocks.app",
-	},
-};
-
 import { useState } from "react";
 
 export default function Page() {
