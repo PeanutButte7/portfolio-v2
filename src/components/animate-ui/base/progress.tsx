@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import { Progress as ProgressPrimitives } from '@base-ui-components/react/progress';
-import { motion, type Transition } from 'motion/react';
+import * as React from "react";
+import { Progress as ProgressPrimitives } from "@base-ui-components/react/progress";
+import { motion, type Transition } from "motion/react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 import {
     CountingNumber,
     type CountingNumberProps,
-} from '@/components/animate-ui/text/counting-number';
+} from "@/components/animate-ui/text/counting-number";
 
 type ProgressContextType = {
     value: number | null;
@@ -21,7 +21,7 @@ const ProgressContext = React.createContext<ProgressContextType | undefined>(
 const useProgress = (): ProgressContextType => {
     const context = React.useContext(ProgressContext);
     if (!context) {
-        throw new Error('useProgress must be used within a Progress');
+        throw new Error("useProgress must be used within a Progress");
     }
     return context;
 };
@@ -31,7 +31,11 @@ type ProgressProps = React.ComponentProps<typeof ProgressPrimitives.Root>;
 const Progress = ({ value, ...props }: ProgressProps) => {
     return (
         <ProgressContext.Provider value={{ value }}>
-            <ProgressPrimitives.Root data-slot="progress" value={value} {...props}>
+            <ProgressPrimitives.Root
+                data-slot="progress"
+                value={value}
+                {...props}
+            >
                 {props.children}
             </ProgressPrimitives.Root>
         </ProgressContext.Provider>
@@ -52,7 +56,7 @@ function ProgressTrack({
     className,
     indicatorClassName,
     indicatorStyle,
-    transition = { type: 'spring', stiffness: 100, damping: 30 },
+    transition = { type: "spring", stiffness: 100, damping: 30 },
     ...props
 }: ProgressTrackProps) {
     const { value } = useProgress();
@@ -61,14 +65,17 @@ function ProgressTrack({
         <ProgressPrimitives.Track
             data-slot="progress-track"
             className={cn(
-                'relative h-1 w-full overflow-hidden rounded-full bg-secondary',
+                "bg-secondary relative h-1 w-full overflow-hidden rounded-full",
                 className,
             )}
             {...props}
         >
             <MotionProgressIndicator
                 data-slot="progress-indicator"
-                className={cn("h-full w-full flex-1 bg-primary rounded-full", indicatorClassName)}
+                className={cn(
+                    "bg-primary h-full w-full flex-1 rounded-full",
+                    indicatorClassName,
+                )}
                 style={indicatorStyle}
                 animate={{ width: `${value}%` }}
                 transition={transition}
@@ -85,7 +92,7 @@ function ProgressLabel(props: ProgressLabelProps) {
 
 type ProgressValueProps = Omit<
     React.ComponentProps<typeof ProgressPrimitives.Value>,
-    'render'
+    "render"
 > & {
     countingNumberProps?: CountingNumberProps;
 };

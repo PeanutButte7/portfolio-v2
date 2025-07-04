@@ -51,15 +51,16 @@ export const About = () => {
                 />
                 <p>
                     👋 Hey! I’m Adam, a{" "}
-                    <span className="font-semibold">
-                        design engineer
-                    </span>{" "} who decided to ditch 9-5 and go on his own!
+                    <span className="font-semibold">design engineer</span> who
+                    decided to ditch 9-5 and go on his own!
                     <br />
-                    <br className="md:hidden" /> I love working with new
-                    tech and exploring useful project ideas. When I find some time
-                    to spare I spend it by growing my{" "}
+                    <br className="md:hidden" /> I love working with new tech
+                    and exploring useful project ideas. When I find some time to
+                    spare I spend it by growing my{" "}
                     <span className="font-semibold">socials</span> or{" "}
-                    <span className="font-semibold">just building cool stuff.</span>
+                    <span className="font-semibold">
+                        just building cool stuff.
+                    </span>
                 </p>
             </BorderBox>
             <div className="flex flex-nowrap gap-5 overflow-scroll px-4 no-scrollbar md:px-0">
@@ -70,7 +71,7 @@ export const About = () => {
                         outerClassName="grow shrink-0"
                     >
                         <h3 className="text-lg">{title}</h3>
-                        <ul className="text-foreground-muted flex flex-col gap-1">
+                        <ul className="flex flex-col gap-1 text-foreground-muted">
                             {items.map((item) => (
                                 <li key={item}>{item}</li>
                             ))}

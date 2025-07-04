@@ -4,10 +4,10 @@ import { cn } from "@/lib/utils";
 import revenueData from "./revenue-data.json";
 
 export interface DotInfo {
-    id: number;
     date: string;
     project: string;
     description: string;
+    amount?: number;
 }
 
 export interface Dot {
@@ -20,7 +20,9 @@ export interface RevenueVisualizerProps {
     onProjectHover?: (project: string | null) => void;
 }
 
-export default function RevenueVisualizer({ onProjectHover }: RevenueVisualizerProps) {
+export default function RevenueVisualizer({
+    onProjectHover,
+}: RevenueVisualizerProps) {
     const [clickedDot, setClickedDot] = useState<Dot | null>(null);
     const [hoveredDotIndex, setHoveredDotIndex] = useState<number | null>(null);
 
@@ -174,7 +176,6 @@ export default function RevenueVisualizer({ onProjectHover }: RevenueVisualizerP
                     <circle
                         cx={dot.x}
                         cy={dot.y}
-                        r={dotSize}
                         className={cn(
                             "dot-element backdrop-blur-lg",
                             !project && "opacity-15",
@@ -197,7 +198,12 @@ export default function RevenueVisualizer({ onProjectHover }: RevenueVisualizerP
                             onProjectHover?.(null);
                             setHoveredDotIndex(null);
                         }}
-                        r={hoveredDotIndex === index && project ? dotSize * 1.2 : dotSize}
+                        // eslint-disable-next-line react/jsx-no-duplicate-props
+                        r={
+                            hoveredDotIndex === index && project
+                                ? dotSize * 1.2
+                                : dotSize
+                        }
                     />
                 </g>
             );
@@ -229,16 +235,29 @@ export default function RevenueVisualizer({ onProjectHover }: RevenueVisualizerP
                         <stop offset="100%" stopColor="#262626" />
                     </radialGradient>
                     {/* Project gradients */}
-                    {Object.entries(projectColors).map(([project, { colors }]) => {
-                        const gradId = `gradient-${project.replace(/[^a-zA-Z0-9]/g, "")}`;
-                        return (
-                            <linearGradient key={gradId} id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
-                                {colors.map((color, i) => (
-                                    <stop key={color} offset={`${(i / (colors.length - 1)) * 100}%`} stopColor={color} />
-                                ))}
-                            </linearGradient>
-                        );
-                    })}
+                    {Object.entries(projectColors).map(
+                        ([project, { colors }]) => {
+                            const gradId = `gradient-${project.replace(/[^a-zA-Z0-9]/g, "")}`;
+                            return (
+                                <linearGradient
+                                    key={gradId}
+                                    id={gradId}
+                                    x1="0%"
+                                    y1="0%"
+                                    x2="100%"
+                                    y2="100%"
+                                >
+                                    {colors.map((color, i) => (
+                                        <stop
+                                            key={color}
+                                            offset={`${(i / (colors.length - 1)) * 100}%`}
+                                            stopColor={color}
+                                        />
+                                    ))}
+                                </linearGradient>
+                            );
+                        },
+                    )}
                 </defs>
                 <g style={{ pointerEvents: "auto" }}>
                     {" "}

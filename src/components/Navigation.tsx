@@ -68,20 +68,30 @@ export const Navigation = () => {
             </div>
             <div className="flex gap-2 md:gap-4">
                 {path === "/million-dollar-wall" ? (
-                    <Link href="/" className={twMerge(
-                        "transition-1 flex h-9 items-center gap-2.5 rounded-lg bg-background-glass px-2.5 hover:bg-background-glass-accent",
-                    )}>
+                    <Link
+                        href="/"
+                        className={twMerge(
+                            "transition-1 flex h-9 items-center gap-2.5 rounded-lg bg-background-glass px-2.5 hover:bg-background-glass-accent",
+                        )}
+                    >
                         Portfolio
-                    </Link>) : (
+                    </Link>
+                ) : (
                     <>
-                        <Link href="/million-dollar-wall" className={twMerge(
-                            "hidden md:flex transition-1 h-9 items-center gap-2.5 rounded-lg bg-background-glass px-2.5 hover:bg-background-glass-accent",
-                        )}>
+                        <Link
+                            href="/million-dollar-wall"
+                            className={twMerge(
+                                "transition-1 hidden h-9 items-center gap-2.5 rounded-lg bg-background-glass px-2.5 hover:bg-background-glass-accent md:flex",
+                            )}
+                        >
                             My Million Dollar Wall
                         </Link>
-                        <Link href="/million-dollar-wall" className={twMerge(
-                            "flex md: transition-1 h-9 w-9 items-center justify-center  rounded-lg bg-background-glass hover:bg-background-glass-accent",
-                        )}>
+                        <Link
+                            href="/million-dollar-wall"
+                            className={twMerge(
+                                "md: transition-1 flex h-9 w-9 items-center justify-center  rounded-lg bg-background-glass hover:bg-background-glass-accent",
+                            )}
+                        >
                             <GridIcon strokeWidth={1.5} />
                         </Link>
                     </>
