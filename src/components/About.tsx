@@ -7,7 +7,7 @@ export const About = () => {
             title: "My favourite tech",
             items: [
                 "React, NextJS, Typescript",
-                "Tailwind, Radix",
+                "Tailwind, Shadcn",
                 "React Query",
             ],
         },
@@ -52,19 +52,17 @@ export const About = () => {
                 <p>
                     👋 Hey! I’m Adam, a{" "}
                     <span className="font-semibold">
-                        front-end web developer, designer
-                    </span>{" "}
-                    and a CS student.
+                        design engineer
+                    </span>{" "} who decided to ditch 9-5 and go on his own!
                     <br />
-                    <br className="md:hidden" /> I love working with new,
-                    exciting tech and exploring new ideas. When I find some time
-                    to spare usually I spend it working on{" "}
-                    <span className="font-semibold">personal projects</span> and{" "}
-                    <span className="font-semibold">exploring</span> new
-                    interesting tools, design trends and AI concepts.
+                    <br className="md:hidden" /> I love working with new
+                    tech and exploring useful project ideas. When I find some time
+                    to spare I spend it by growing my{" "}
+                    <span className="font-semibold">socials</span> or{" "}
+                    <span className="font-semibold">just building cool stuff.</span>
                 </p>
             </BorderBox>
-            <div className="no-scrollbar flex flex-nowrap gap-5 overflow-scroll px-4 md:px-0">
+            <div className="flex flex-nowrap gap-5 overflow-scroll px-4 no-scrollbar md:px-0">
                 {list.map(({ title, items }, index) => (
                     <BorderBox
                         key={index}
@@ -72,7 +70,7 @@ export const About = () => {
                         outerClassName="grow shrink-0"
                     >
                         <h3 className="text-lg">{title}</h3>
-                        <ul className="flex flex-col gap-1 text-foreground-muted">
+                        <ul className="text-foreground-muted flex flex-col gap-1">
                             {items.map((item) => (
                                 <li key={item}>{item}</li>
                             ))}

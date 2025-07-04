@@ -25,13 +25,13 @@ export const MobileCard = ({
                 <p className="text-foreground-muted">{date}</p>
             </div>
             <div className="flex items-end justify-between gap-2">
-                <p className="shrink text-balance text-foreground-muted">
+                <p className="text-foreground-muted shrink text-balance">
                     {description}
                 </p>
                 {detail && (
                     <Anchor
                         href={detail.link}
-                        className="flex w-fit gap-2 text-nowrap break-keep rounded-md bg-background-glass-accent px-2 py-1 text-xs text-foreground-muted group-hover:underline"
+                        className="bg-background-glass-accent text-foreground-muted flex w-fit gap-2 text-nowrap break-keep rounded-md px-2 py-1 text-xs group-hover:underline"
                     >
                         <p className="text-nowrap break-keep">
                             {detail.linkLabel}

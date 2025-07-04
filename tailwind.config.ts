@@ -13,6 +13,7 @@ const config: Config = {
     },
     theme: {
         colors: {
+            white: "rgb(var(--white) / <alpha-value>)",
             foreground: {
                 DEFAULT: "rgb(var(--foreground) / <alpha-value>)",
                 muted: "rgb(var(--foreground-muted) / <alpha-value>)",

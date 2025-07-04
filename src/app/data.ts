@@ -16,9 +16,24 @@ const game = "Try the game";
 
 export const careerItems: Item[] = [
     {
+        title: "Launch Studio",
+        description: "Self-owned design studio focused on UI/UX and branding",
+        date: "2025 - now",
+        highlight: true,
+        detail: {
+            link: "https://launchstudio.space",
+            linkLabel: learnMore,
+        },
+    },
+    {
         title: "Appio",
+<<<<<<< HEAD
         description: "Creating modern websites for a Czech development agency",
         date: "2023 - now",
+=======
+        description: "Created and designed modern B2B focused websites.",
+        date: "2023 - 2025",
+>>>>>>> 24d6fde (feat: mill wall)
         highlight: true,
         detail: {
             link: "https://appio.cz",
@@ -34,9 +49,15 @@ export const careerItems: Item[] = [
     },
     {
         title: "Educanet Prague",
+<<<<<<< HEAD
         description: "Teaching high school students web development and design",
         date: "2023 - 2024",
         highlight: false,
+=======
+        description: "Tought high school web development and design",
+        date: "2023 - 2024",
+        highlight: true,
+>>>>>>> 24d6fde (feat: mill wall)
         detail: {
             link: "https://praha.educanet.cz/cs/informacni-technologie/",
             linkLabel: learnMore,
@@ -69,6 +90,7 @@ export const careerItems: Item[] = [
 
 export const projectItems: Item[] = [
     {
+<<<<<<< HEAD
         title: "Launch Kit Studio",
         description:
             "Desing agency",
@@ -122,10 +144,28 @@ export const projectItems: Item[] = [
             "Set of beautiful Tailwind components inspired by Apple Vision Pro",
         date: "2023",
         highlight: false,
+=======
+        title: "Dev Blocks",
+        description: "Notion templates for Indie hackers and founders",
+        date: "2023",
+        highlight: true,
+        detail: {
+            link: "https://www.devblocks.app/",
+            linkLabel: learnMore,
+            image: "/images/vision-ui.jpg",
+        },
+    },
+    {
+        title: "Vision UI",
+        description:
+            "Set of beautiful Tailwind components inspired by Apple Vision Pro",
+        date: "2023",
+        highlight: true,
+>>>>>>> 24d6fde (feat: mill wall)
         detail: {
             link: "https://github.com/PeanutButte7/vision-ui",
             linkLabel: github,
-            image: "/images/vision-ui.jpg",
+            image: "/images/dev-blocks.jpg",
         },
     },
     {

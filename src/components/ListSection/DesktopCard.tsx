@@ -21,7 +21,7 @@ export const DesktopCard = ({
         <HoverCard openDelay={200} closeDelay={200}>
             <HoverCardTrigger
                 className={twMerge(
-                    "relative flex cursor-default items-center gap-2.5 rounded-lg px-2 py-1.5 hover:bg-background-glass-accent",
+                    "hover:bg-background-glass-accent relative flex cursor-default items-center gap-2.5 rounded-lg px-2 py-1.5",
                     className,
                 )}
             >
@@ -59,11 +59,11 @@ export const DesktopCard = ({
                         className="group flex items-center justify-between"
                     >
                         {detail.image && (
-                            <p className="font-semibold text-foreground-muted">
+                            <p className="text-foreground-muted font-semibold">
                                 Preview
                             </p>
                         )}
-                        <div className="flex w-fit gap-2 text-foreground-muted group-hover:underline">
+                        <div className="text-foreground-muted flex w-fit gap-2 group-hover:underline">
                             <p>{detail.linkLabel}</p>
                             <IconExternalLink size={16} />
                         </div>
