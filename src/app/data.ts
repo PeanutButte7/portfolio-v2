@@ -27,13 +27,8 @@ export const careerItems: Item[] = [
     },
     {
         title: "Appio",
-<<<<<<< HEAD
-        description: "Creating modern websites for a Czech development agency",
-        date: "2023 - now",
-=======
         description: "Created and designed modern B2B focused websites.",
         date: "2023 - 2025",
->>>>>>> 24d6fde (feat: mill wall)
         highlight: true,
         detail: {
             link: "https://appio.cz",
@@ -49,15 +44,9 @@ export const careerItems: Item[] = [
     },
     {
         title: "Educanet Prague",
-<<<<<<< HEAD
-        description: "Teaching high school students web development and design",
-        date: "2023 - 2024",
-        highlight: false,
-=======
         description: "Tought high school web development and design",
         date: "2023 - 2024",
         highlight: true,
->>>>>>> 24d6fde (feat: mill wall)
         detail: {
             link: "https://praha.educanet.cz/cs/informacni-technologie/",
             linkLabel: learnMore,
@@ -90,61 +79,6 @@ export const careerItems: Item[] = [
 
 export const projectItems: Item[] = [
     {
-<<<<<<< HEAD
-        title: "Launch Kit Studio",
-        description:
-            "Desing agency",
-        date: "2024 - now",
-        highlight: true,
-        detail: {
-            link: "https://www.launchkitstudio.com",
-            linkLabel: learnMore,
-            image: "/images/launchkitstudio.jpg",
-        },
-    },
-    {
-        title: "Dev Blocks",
-        description:
-            "Notion templates for developers",
-        date: "2024 - now",
-        highlight: true,
-        detail: {
-            link: "https://devblocks.app",
-            linkLabel: learnMore,
-            image: "/images/devblocks.jpg",
-        },
-    },
-    {
-        title: "Blog Boost (canceled)",
-        description:
-            "AI-powered text formatting tool",
-        date: "2024",
-        highlight: false,
-        detail: {
-            link: "https://www.blog-boost.com/",
-            linkLabel: learnMore,
-            image: "/images/blog-boost.jpg",
-        },
-    },
-    {
-        title: "Korektorr",
-        description:
-            "Czech text editor with local and AI autocorrect features",
-        date: "2024",
-        highlight: false,
-        detail: {
-            link: "https://www.korektorr.cz/",
-            linkLabel: learnMore,
-            image: "/images/korektorr.jpg",
-        },
-    },
-    {
-        title: "Vision UI (canceled)",
-        description:
-            "Set of beautiful Tailwind components inspired by Apple Vision Pro",
-        date: "2023",
-        highlight: false,
-=======
         title: "Dev Blocks",
         description: "Notion templates for Indie hackers and founders",
         date: "2023",
@@ -161,7 +95,6 @@ export const projectItems: Item[] = [
             "Set of beautiful Tailwind components inspired by Apple Vision Pro",
         date: "2023",
         highlight: true,
->>>>>>> 24d6fde (feat: mill wall)
         detail: {
             link: "https://github.com/PeanutButte7/vision-ui",
             linkLabel: github,
