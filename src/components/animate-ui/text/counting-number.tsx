@@ -36,6 +36,7 @@ function CountingNumber({
     ...props
 }: CountingNumberProps) {
     const localRef = React.useRef<HTMLSpanElement>(null);
+    // @ts-ignore
     React.useImperativeHandle(ref, () => localRef.current as HTMLSpanElement);
 
     const numberStr = number.toString();
@@ -43,8 +44,8 @@ function CountingNumber({
         typeof decimalPlaces === "number"
             ? decimalPlaces
             : numberStr.includes(".")
-              ? numberStr.split(".")[1]?.length ?? 0
-              : 0;
+                ? numberStr.split(".")[1]?.length ?? 0
+                : 0;
 
     const motionVal = useMotionValue(fromNumber);
     const springVal = useSpring(motionVal, transition);
@@ -92,7 +93,7 @@ function CountingNumber({
     const finalIntLength = Math.floor(Math.abs(number)).toString().length;
     const initialText = padStart
         ? "0".padStart(finalIntLength, "0") +
-          (decimals > 0 ? decimalSeparator + "0".repeat(decimals) : "")
+        (decimals > 0 ? decimalSeparator + "0".repeat(decimals) : "")
         : "0" + (decimals > 0 ? decimalSeparator + "0".repeat(decimals) : "");
 
     return (

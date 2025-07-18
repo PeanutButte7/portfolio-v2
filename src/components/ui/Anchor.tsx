@@ -21,6 +21,7 @@ export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(
                 <Link
                     href={href}
                     className={classes}
+                    // @ts-ignore
                     ref={ref as React.Ref<HTMLAnchorElement>}
                     {...props}
                 >
