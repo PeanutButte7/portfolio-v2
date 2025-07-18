@@ -89,7 +89,7 @@ export const Navigation = () => {
                         <Link
                             href="/million-dollar-wall"
                             className={twMerge(
-                                "md: transition-1 flex h-9 w-9 items-center justify-center  rounded-lg bg-background-glass hover:bg-background-glass-accent",
+                                "md:hidden transition-1 flex h-9 w-9 items-center justify-center  rounded-lg bg-background-glass hover:bg-background-glass-accent",
                             )}
                         >
                             <GridIcon strokeWidth={1.5} />
