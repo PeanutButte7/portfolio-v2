@@ -1,49 +1,56 @@
 [
-  
-  {
-    "date": "2024-10",
-    "project": "Dev Blocks",
-    "description": "My first money earned online! This has proven me that earning money online is easier than I thought and I can actually do it!."
-  },
-  {
-    "date": "2024-11",
-    "project": "Dev Blocks",
-    "description": "What started as a test product actually earned me decent money! It was time to refocus on something else tho."
-  },
-  {
-    "date": "2024-12",
-    "project": "Launch Studio",
-    "description": "First month for what I originaly called Launch Kit Studio. Earned by making logo kits for small creators"
-  },
-  {
-    "date": "2025-02",
-    "project": "Launch Studio",
-    "description": "Making logo kits and designing on the side of my day job."
-  },
-  {
-    "date": "2025-03",
-    "project": "Launch Studio",
-    "description": "I finally quit my day job and went full in on Launch Studio!"
-  },
-  {
-    "date": "2025-04",
-    "project": "Launch Studio",
-    "description": ""
-  },
-  {
-    "date": "2025-05",
-    "project": "Launch Studio",
-    "description": "Landed some great clients for Launch Studio! Continuing the grind and focusing more on client aquisition."
-  },
-  {
-    "date": "2025-05",
-    "project": "Launch Studio",
-    "description": ""
-  },
-  {
-    "date": "2025-06",
-    "project": "Launch Studio",
-    "description": "After some rough days I got back on track. Landed a huge colab with a development agency.",
-    "amount": 1891
-  }
+    {
+        "date": "2024-10",
+        "project": "Dev Blocks",
+        "description": "My first money earned online! This has proven me that earning money online is easier than I thought and I can actually do it!.",
+        "amounts": [1000]
+    },
+    {
+        "date": "2024-11",
+        "project": "Dev Blocks",
+        "description": "What started as a test product actually earned me decent money! It was time to refocus on something else tho.",
+        "amounts": [1000]
+    },
+    {
+        "date": "2024-12",
+        "project": "Launch Studio",
+        "description": "First month for what I originaly called Launch Kit Studio. Earned by making logo kits for small creators",
+        "amounts": [1000]
+    },
+    {
+        "date": "2025-02",
+        "project": "Launch Studio",
+        "description": "Making logo kits and designing on the side of my day job.",
+        "amounts": [1000]
+    },
+    {
+        "date": "2025-03",
+        "project": "Launch Studio",
+        "description": "I finally quit my day job and went full in on Launch Studio!",
+        "amounts": [1000]
+    },
+    {
+        "date": "2025-04",
+        "project": "Launch Studio",
+        "description": "",
+        "amounts": [1000]
+    },
+    {
+        "date": "2025-05",
+        "project": "Launch Studio",
+        "description": "Landed some great clients for Launch Studio! Continuing the grind and focusing more on client aquisition.",
+        "amounts": [1000, 1000]
+    },
+    {
+        "date": "2025-06",
+        "project": "Launch Studio",
+        "description": "After some rough days I got back on track. Landed a huge colab with a development agency.",
+        "amounts": [1891]
+    },
+    {
+        "date": "2025-07",
+        "project": "Launch Studio",
+        "description": "Things seem to be really taking off, making connections with others is the best thing you can do for your business",
+        "amounts": [4487]
+    }
 ]

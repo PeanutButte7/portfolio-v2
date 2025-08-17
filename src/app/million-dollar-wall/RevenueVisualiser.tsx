@@ -1,40 +1,44 @@
 import { useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
-import revenueData from "./revenue-data.json";
 
-export interface DotInfo {
+export interface RevenueEntry {
     date: string;
     project: string;
     description: string;
-    amount?: number;
+    amounts: number[];
+}
+
+export interface ExpandedRevenueDataItem extends RevenueEntry {
+    amount: number;
 }
 
 export interface Dot {
     x: number;
     y: number;
-    dotInfo: DotInfo;
+    dotInfo: ExpandedRevenueDataItem;
 }
 
 export interface RevenueVisualizerProps {
     onProjectHover?: (project: string | null) => void;
+    expandedRevenueData: ExpandedRevenueDataItem[];
 }
 
 // Create color mapping for revenue items
 export const projectColors: Record<string, { colors: string[]; link: string }> =
-{
-    "Launch Studio": {
-        colors: ["#f97316", "#fb923c"],
-        link: "https://launchstudio.space",
-    },
-    "Dev Blocks": {
-        colors: ["#6b7280", "#94a3b8"],
-        link: "https://devblocks.app",
-    },
-};
-
+    {
+        "Launch Studio": {
+            colors: ["#f97316", "#fb923c"],
+            link: "https://launchstudio.space",
+        },
+        "Dev Blocks": {
+            colors: ["#6b7280", "#94a3b8"],
+            link: "https://devblocks.app",
+        },
+    };
 
 export default function RevenueVisualizer({
     onProjectHover,
+    expandedRevenueData,
 }: RevenueVisualizerProps) {
     const [clickedDot, setClickedDot] = useState<Dot | null>(null);
     const [hoveredDotIndex, setHoveredDotIndex] = useState<number | null>(null);
@@ -74,14 +78,15 @@ export default function RevenueVisualizer({
 
         // Consume payment data
         let dotInfoIndex = 0;
-        const nextDotInfo = (): DotInfo => {
-            const dotInfo = revenueData[dotInfoIndex];
+        const nextDotInfo = (): ExpandedRevenueDataItem | undefined => {
+            const dotInfo = expandedRevenueData[dotInfoIndex];
             dotInfoIndex += 1;
             return dotInfo;
         };
 
         // Add center dot (counts toward 1,000)
         const centerDotInfo = nextDotInfo();
+        if (!centerDotInfo) return [];
         positions.push({
             x: centerX,
             y: centerY,
@@ -142,22 +147,27 @@ export default function RevenueVisualizer({
         const maxDots = Math.floor((radius * 1.8) / dotSpacing);
         const startX =
             centerX -
-            ((Math.min(revenueData.length, maxDots) - 1) * dotSpacing) / 2;
+            ((Math.min(expandedRevenueData.length, maxDots) - 1) * dotSpacing) /
+                2;
 
         // Create positions for revenue dots at the top
-        for (let i = 0; i < revenueData.length; i++) {
+        for (let i = 0; i < expandedRevenueData.length; i++) {
             if (i >= maxDots) break; // Don't exceed available space
             revenueDotPositions.push({
                 x: startX + i * dotSpacing,
                 y: topY + 10, // Slightly below the very top for better visibility
-                dotInfo: revenueData[i],
+                dotInfo: expandedRevenueData[i],
             });
         }
 
         // First, create a map of the dots we want to color
         const dotsToColor = new Map<
             number,
-            { x: number; y: number; dotInfo: DotInfo }
+            {
+                x: number;
+                y: number;
+                dotInfo: ExpandedRevenueDataItem;
+            }
         >();
 
         // For each revenue dot, find the closest existing dot
