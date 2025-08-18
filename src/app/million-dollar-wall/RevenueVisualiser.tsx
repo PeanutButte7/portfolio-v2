@@ -15,7 +15,7 @@ export interface ExpandedRevenueDataItem extends RevenueEntry {
 export interface Dot {
     x: number;
     y: number;
-    dotInfo: ExpandedRevenueDataItem;
+    dotInfo?: ExpandedRevenueDataItem;
 }
 
 export interface RevenueVisualizerProps {
@@ -84,17 +84,10 @@ export default function RevenueVisualizer({
             return dotInfo;
         };
 
-        // Add center dot (counts toward 1,000)
-        const centerDotInfo = nextDotInfo();
-        if (!centerDotInfo) return [];
-        positions.push({
-            x: centerX,
-            y: centerY,
-            dotInfo: centerDotInfo,
-        });
+        // Add center dot
+        positions.push({ x: centerX, y: centerY, dotInfo: nextDotInfo() });
 
-        // Generate concentric rings
-        let totalDots = 1; // already placed center dot
+        let totalDots = 1;
         let currentRadius = radialGap;
         let ringIndex = 0;
 
@@ -112,14 +105,11 @@ export default function RevenueVisualizer({
 
             for (let i = 0; i < dotsThisRing; i++) {
                 const angle = angleOffset + (i / dotsThisRing) * 2 * Math.PI;
-                const dotInfo = nextDotInfo();
-                if (dotInfo) {
-                    positions.push({
-                        x: round(centerX + Math.cos(angle) * currentRadius),
-                        y: round(centerY + Math.sin(angle) * currentRadius),
-                        dotInfo: dotInfo,
-                    });
-                }
+                positions.push({
+                    x: round(centerX + Math.cos(angle) * currentRadius),
+                    y: round(centerY + Math.sin(angle) * currentRadius),
+                    dotInfo: nextDotInfo(),
+                });
             }
 
             totalDots += dotsThisRing;
