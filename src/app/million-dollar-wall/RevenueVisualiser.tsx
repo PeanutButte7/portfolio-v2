@@ -113,11 +113,13 @@ export default function RevenueVisualizer({
             for (let i = 0; i < dotsThisRing; i++) {
                 const angle = angleOffset + (i / dotsThisRing) * 2 * Math.PI;
                 const dotInfo = nextDotInfo();
-                positions.push({
-                    x: round(centerX + Math.cos(angle) * currentRadius),
-                    y: round(centerY + Math.sin(angle) * currentRadius),
-                    dotInfo: dotInfo,
-                });
+                if (dotInfo) {
+                    positions.push({
+                        x: round(centerX + Math.cos(angle) * currentRadius),
+                        y: round(centerY + Math.sin(angle) * currentRadius),
+                        dotInfo: dotInfo,
+                    });
+                }
             }
 
             totalDots += dotsThisRing;
