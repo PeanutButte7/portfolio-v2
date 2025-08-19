@@ -177,13 +177,17 @@ export default function RevenueVisualizer({
                 }
             });
 
-            if (closestDotIndex !== -1) {
-                dotsToColor.set(closestDotIndex, rd);
+            if (closestDotIndex !== -1 && rd.dotInfo) {
+                dotsToColor.set(closestDotIndex, {
+                    ...rd,
+                    dotInfo: rd.dotInfo,
+                });
             }
         });
 
         return dotPositions.map((dot, index) => {
-            const project = dot.dotInfo?.project || null;
+            const coloredDot = dotsToColor.get(index);
+            const project = coloredDot?.dotInfo?.project || null;
             const dotSize = getDotSize();
 
             return (
