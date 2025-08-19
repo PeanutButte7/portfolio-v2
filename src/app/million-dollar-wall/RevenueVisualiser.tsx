@@ -125,69 +125,8 @@ export default function RevenueVisualizer({
     const getDotSize = () => 8;
 
     const dotElements = useMemo(() => {
-        const centerX = 400;
-        const centerY = 400;
-        const radius = 320; // Approximate radius of the outer circle
-
-        // Find the top point of the outer circle
-        const topY = centerY - radius;
-
-        const revenueDotPositions: Dot[] = [];
-        const dotSpacing = 24; // Space between dots
-
-        // Calculate how many dots we can fit at the top (leaving some margin)
-        const maxDots = Math.floor((radius * 1.8) / dotSpacing);
-        const startX =
-            centerX -
-            ((Math.min(expandedRevenueData.length, maxDots) - 1) * dotSpacing) /
-                2;
-
-        // Create positions for revenue dots at the top
-        for (let i = 0; i < expandedRevenueData.length; i++) {
-            if (i >= maxDots) break; // Don't exceed available space
-            revenueDotPositions.push({
-                x: startX + i * dotSpacing,
-                y: topY + 10, // Slightly below the very top for better visibility
-                dotInfo: expandedRevenueData[i],
-            });
-        }
-
-        // First, create a map of the dots we want to color
-        const dotsToColor = new Map<
-            number,
-            {
-                x: number;
-                y: number;
-                dotInfo: ExpandedRevenueDataItem;
-            }
-        >();
-
-        // For each revenue dot, find the closest existing dot
-        revenueDotPositions.forEach((rd) => {
-            let closestDotIndex = -1;
-            let minDistance = Infinity;
-
-            dotPositions.forEach((dot, index) => {
-                const distance = Math.sqrt(
-                    Math.pow(rd.x - dot.x, 2) + Math.pow(rd.y - dot.y, 2),
-                );
-                if (distance < minDistance && !dotsToColor.has(index)) {
-                    minDistance = distance;
-                    closestDotIndex = index;
-                }
-            });
-
-            if (closestDotIndex !== -1 && rd.dotInfo) {
-                dotsToColor.set(closestDotIndex, {
-                    ...rd,
-                    dotInfo: rd.dotInfo,
-                });
-            }
-        });
-
         return dotPositions.map((dot, index) => {
-            const coloredDot = dotsToColor.get(index);
-            const project = coloredDot?.dotInfo?.project || null;
+            const project = dot.dotInfo?.project || null;
             const dotSize = getDotSize();
 
             return (
